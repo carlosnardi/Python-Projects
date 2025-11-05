@@ -1,5 +1,8 @@
-from word_counter import main
+# from word_counter import main
+from calculating_tip import main
 
-# from word_counter import tests
+
+
+
 
 
