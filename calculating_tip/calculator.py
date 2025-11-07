@@ -1,26 +1,20 @@
 
 def prepare_input():
   print('-- Tip Calculator --\n')
-  
   value_to_pay = input('Enter the bill amount: ')
-  tip_value = input('Enter the tip percentage: ')
-  if ',' in value_to_pay:
-    value_to_pay = float(value_to_pay.replace(',','.'))
-  else:
-    value_to_pay = float(value_to_pay)
-  if ',' in tip_value:
-    tip_value = float(tip_value.replace(',', '.'))
-  else:
-    tip_value = float(tip_value)
-
-  return value_to_pay, tip_value
-    
+  tip_value = input('Enter the tip percentage: ')   
+  items = [value_to_pay, tip_value]
+  for i, item in enumerate(items):
+    if ',' in item:
+      items[i] = float(item.replace(',','.'))
+    else:
+      items[i] = float(item)
+  return items
 
 def calc_tip():
   values = prepare_input()
-  value_to_pay = values[0]
-  tip_value = values[1]
+  value_to_pay, tip_value = values
   tip = round(value_to_pay * (tip_value / 100), 2)
-  total_bill = round((value_to_pay + tip), 2)
+  total_bill = value_to_pay + tip
   return total_bill, tip
   
