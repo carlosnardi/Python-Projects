@@ -13,8 +13,9 @@ def check_id():
   try: 
     id_check = int(id)
     if len(id) == 11: 
-      return print('Valid ID')
+      return 'Valid ID'
     else: 
-      return print('Error: The ID must have eleven numbers')
+      return 'Error: The ID must have eleven numbers'
   except: 
-    return print('Enter only numbers')
+    return 'Enter only numbers'
+    
