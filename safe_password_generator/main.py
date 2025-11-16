@@ -17,3 +17,7 @@ pg.initial_screen()
 password = pg.create_pass()
 print(f'Password generated: {password}')
 # pyperclip.copy(password)
+
+
+# Check pass_generator.py file, a Simpler alternative:
+print(f'Simpler alternative: {pg.create_password()}')

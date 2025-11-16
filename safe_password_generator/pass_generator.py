@@ -3,8 +3,8 @@ import random
 
 def initial_screen():
   os.system('clear')
-  print('''𝙎𝙖𝙛𝙚 𝙋𝙖𝙨𝙨 𝙂𝙚𝙣     
-\n𝖲𝖺𝖿𝖾 𝖯𝖺𝗌𝗌𝗐𝗈𝗋𝖽 𝖦𝖾𝗇𝖾𝗋𝖺𝗍𝗈𝗋 𝖠𝗉𝗉\n''')
+  print('''Safe Pass Gen     
+\nSafe Pass Generator App\n''')
 
 def random_alpha():
   alpha = 'a b c d e f g h i j k l m n o p q r s t u v x y z'
@@ -13,12 +13,12 @@ def random_alpha():
   return random.choice(alpha_list_lower), random.choice(appha_list_upper)
 
 def random_number():
-  number = '1 2 3 4 5 6 7 8 9'
+  number = '0 1 2 3 4 5 6 7 8 9'
   number_list = number.split(' ')
   return random.choice(number_list)
 
 def random_character():
-  character = '# @ % & * ! _ - + = . ; , / ?'
+  character = '# @ % & * ! _ - + = / ?'
   character_list = character.split(' ')
   return random.choice(character_list)
 
@@ -36,8 +36,25 @@ def create_pass():
   return password
     
   
+  # Simpler and more fluid alternative:
+
+def create_password():
+  capital = 'abcdefghijklmnopqrstuvxyz'
+  lowercase = 'ABCDEFGHIJKLMNOPQRSTUVXYZ'
+  numbers = '0123456789'
+  special_char = '#@%&*!_-+=/?'
+
+  password = [
+    random.choice(capital), 
+    random.choice(lowercase),
+    random.choice(numbers),
+    random.choice(special_char)
+  ]
+  all_char = capital + lowercase + numbers + special_char
+  password.extend(random.choices(all_char, k = 8))
+  random.shuffle(password)
   
-
-
+  return ''.join(password)
+  
 
   
