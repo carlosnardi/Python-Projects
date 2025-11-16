@@ -8,9 +8,12 @@
 
 # Generated password: A1b@C3d$E5f&
 
+
+# import pyperclip
+
 from safe_password_generator import pass_generator as pg
 
 pg.initial_screen()
 password = pg.create_pass()
 print(f'Password generated: {password}')
-
+# pyperclip.copy(password)
