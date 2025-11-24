@@ -3,8 +3,8 @@
 # from id_validation import main
 # from vowel_counting import main
 # from long_words import main
-from safe_password_generator import main
-# from jokenpo import main
+# from safe_password_generator import main
+from jokenpo import main
 
 
 

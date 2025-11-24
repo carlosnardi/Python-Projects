@@ -1,18 +1,21 @@
-import random
+from jokenpo.jokenpo_functions import game_play, game_title, score
 
-player = input('Choose: Rock, Scissors or Paper: ').title()
+game_continues = 'y'
+player_points = 0
+computer_points = 0
 
-options = ['Rock', 'Scissors', 'Paper']
-
-computer = random.choice(options)
-
-if player not in options:
-  result = 'Try again, enter only rock, scissors or paper.'
-elif player == computer:
-  result = f'Player: {player} x Computer: {computer} => It was a Draw'
-elif (player == 'Rock' and computer == 'Scissors') or (player == 'Scissors' and computer == 'Paper') or (player == 'Paper' and computer == 'Rock'):
-  result = f'Player: {player} x Computer: {computer} => You Won!'
-else:
-  result = f'Player: {player} x Computer: {computer} => You lost!'
-
-print(result)
+while game_continues != 'e':
+  game_title()
+  player_choice = input('Choose: Rock, Scissors or Paper: ').title()
+  print()
+  game = game_play(player_choice)
+  print(game)
+  player_points = score(game, player_points, computer_points)[0]
+  computer_points = score(game, player_points, computer_points)[1]
+  print(f'''
+  Score:
+  - Player: {player_points}
+  - Computer: {computer_points}''')
+  game_continues = input('\nContinue (e for exit): ').lower()
+  
+print('\nThanks for playing! See you next time!')
