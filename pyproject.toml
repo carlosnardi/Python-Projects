@@ -6,5 +6,6 @@ authors = ["Your Name <you@example.com>"]
 requires-python = ">=3.11"
 dependencies = [
     "counter>=1.0.0",
+    "django-task-manager>=0.1",
     "simplecalculator>=0.0.4",
 ]
